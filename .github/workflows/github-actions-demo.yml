@@ -16,5 +16,11 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo ${{ github.run_number }}-${{ github.run_id }}-${{ github.run_attempt }}
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Run Python script
+        run: python test.py
       - run: sleep 60
       - run: echo "🍏 This job's status is ${{ job.status }}."
