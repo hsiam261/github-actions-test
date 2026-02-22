@@ -1,0 +1,16 @@
+name: Bangu
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - bangu/**
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing
+        run: echo "Hello"
+      
