@@ -1,0 +1,20 @@
+name: Print Vars and Secrets
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        required: true
+        type: choice
+        options:
+          - dev
+jobs:
+  print:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.env }}   # change if needed
+
+    steps:
+      - name: Echo vars and secrets
+        run: |
+          echo "vars.ID = ${{ vars.ID }}"
+          echo "secrets.KEY = ${{ secrets.KEY }}"
