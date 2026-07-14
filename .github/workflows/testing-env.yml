@@ -13,6 +13,9 @@ on:
       env:
         required: true
         type: string
+    secrets:
+      KEY:
+        required: true
 jobs:
   print:
     runs-on: ubuntu-latest
