@@ -1,0 +1,10 @@
+name: Caller
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call:
+    uses: ./.github/workflows/print-vars.yml
+    with:
+      env: dev
