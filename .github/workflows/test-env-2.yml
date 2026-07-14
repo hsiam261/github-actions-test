@@ -8,3 +8,8 @@ jobs:
     uses: ./.github/workflows/testing-env.yml
     with:
       env: dev
+    secrets:
+      # secrets.TEST_SECRET can be an environment variable that this job cannot actually access, which is very unclear and confusing
+      # I guess think of it more like giving permission to access this value rather than passing the value itself :shrug:
+      TEST_SECRET: ${{ secrets.TEST_SECRET }}
+      KEY: ${{ secrets.KEY }}
