@@ -1,0 +1,21 @@
+name: Download and Echo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: ./.github/workflows/artifact-test.yml
+
+  echo-result:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: my-result
+
+      - name: Echo result
+        run: cat result.txt
