@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Build
+        run: |
+          echo "some result" > result.txt
+
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-result
+          path: result.txt
