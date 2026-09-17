@@ -1,4 +1,4 @@
-name: Build
+name: artifact-test
 
 on:
   workflow_call:
